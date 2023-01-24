@@ -1,9 +1,10 @@
 
 {% extends 'base.html' %}
-{% block body %}<form method="POST">
+{% block body %}
+<form method="POST" xmlns="http://www.w3.org/1999/html">
   {% csrf_token %}
-  Are you sure, You want to delete this Film?
+  <p>Are you sure, You want to delete this Film?</p>
+  <button type="submit">confirm</button>
 
-<button type="button" class="btn btn-success">Yes</button>
 </form>
 {% endblock %}

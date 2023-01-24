@@ -10,9 +10,10 @@
 <body>
 <!-- Image and text -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="{% url 'film:film' %}">
     <h2>Online Film Store</h2>
   </a>
+<a class="btn btn-primary" href="{% url 'film:add_film' %}" role="button">ADD FILM</a>
 </nav>
 {% block body %}
 {% endblock %}

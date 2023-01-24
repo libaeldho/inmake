@@ -31,6 +31,16 @@ def add_film(request):
     return render(request, 'add.html')
 
 
+def add_new(request):
+    if request.method == "POST":
+        name = request.POST.get('name', )
+        desc = request.POST.get('desc', )
+        year = request.POST.get('year', )
+        img = request.FILES['img']
+        film = Film(name=name, desc=desc, year=year, img=img)
+        film.save()
+    return render(request, 'film.html')
+
 def update(request, id):
     film = Film.objects.get(id=id)
     form = FilmForm(request.POST or None, request.FILES, instance=film)
@@ -41,8 +51,8 @@ def update(request, id):
 
 
 def delete(request, id):
-    if request.method=='POST':
-        film=Film.objects.get(id=id)
+    if request.method == 'POST':
+        film = Film.objects.get(id=id)
         film.delete()
         return redirect('/')
     return render(request,'delete.html')
