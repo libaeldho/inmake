@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+  Welcome to you can find you ideal fashion for your eyes......
+{% endblock %}
+{% block title %}
+    Search Your IDEAL FASHION
+{% endblock %}
+{% block content %}
+<div>
+    <p class="text-center my_search_text">You have searched for:<b>"{{query}}"</b></p>
+</div>
+<div class="container">
+  <div class="row mx_auto">
+    {% for product in products %}
+    <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+      <div class="card text-center" style="min-width=18rem;">
+        <a href="{{product.get_url}}">< class ="card-img-top{{product.image.url}}">< class="card-img-top my_image" alt="{{product.name}}"></a>
+      <div class="card-body">
+        <h4>{{product.name}}</h4>
+        <p>{{product.price}}</p>
+      </div>
+      </div>
+    </div>
+      {% empty%}
+<div class="row mx-auto">
+    <p class="text-center my_search_text"> no item found </p>
+</div>
+      {% endfor%}
+  </div>
+    </div>
+    {% endblock %}

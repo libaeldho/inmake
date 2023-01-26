@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+    {{ product.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+  {% if category %}
+    {{ product.name }} - AMMOOS OPTICALS
+  {% endif %}
+{% endblock %}
