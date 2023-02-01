@@ -9,8 +9,8 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'shopapp:allProdCat' %}">HOME</a>
         </li>
-        <li class="nav-item dropdown {% if 'shop' in request.path %}active{% endif %}">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">SHOP</a>
+        <li class="nav-item dropdown {% if 'shopapp' in request.path %}active{% endif %}">
+          <a class="nav-link dropdown-toggle" href="{{cat.get_url}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">SHOP</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'shopapp:allProdCat' %}">All Products</a></li>
             {% for cat in links %}
@@ -20,14 +20,13 @@
         </li>
         {% if item_count > 0 %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'cartapp:cart_detail' %}"><i class="fa fa-cart-plus"></i>
-{{item_count}}</a>
+          <a class="nav-link" href="{% url 'cartapp:cart_detail' %}"><i class="fa fa-shopping-cart"></i>{{item_count}}</a>
         </li>
         {% endif %}
       </ul>
       <form class="d-flex" action="{%url 'findapp:SearchResult' %}" method="get">
         {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" name="q"aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"><i class="fa fa-search-plus" ></i></button>
       </form>
     </div>

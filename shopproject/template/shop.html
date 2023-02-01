@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+  {% if category %}
+    {{ category.description|truncatewords:155 }}
+  {% else %}
+Welcome to AMMOOS OPTICALS where you can find the fashion for your eyes......
+  {% endif %}
+{% endblock %}
+{% block title %}
+  {% if category %}
+    {{ category.name }} - AMMOOS OPTICALS
+  {% else %}
+    See Our New Collection - AMMOOS OPTICALS
+  {% endif %}
+{% endblock %}
