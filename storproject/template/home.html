@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="container">
+ {% include 'header.html' %}
+{% include 'navbar.html' %}
+    {% block content %}{% endblock %}
+    <div class="home">
+    <h1>"The secret of success is to do the common things uncommonly well.”
+― John D. Rockefeller</h1>
+    <p> How ever it's too hard to win,But once you taste it you never give-up for any reason.</p>
+    <a href="about" class="hero-btn">We are here for you</a>
+</div>
+        </div>
+{% include 'footer.html' %}
+</body>
+<body>

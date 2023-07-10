@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <head>
+	  <meta charset="UTF-8">
+	  <title>Login & Register</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+<body>
+<div class="container">
+{% include 'header.html' %}
+{% block content %}{% endblock %}
+        </div>
+<div class="wrapper">
+ <div class="form_container">
+     <i class="uil uil-times form_close"></i>
+          <div class="form login_form">
+<h1>Registration</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+       <div class="form-field d-flex align-items-center">
+                <span class="fa fa-user"></span>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+         <div class="form-field d-flex align-items-center">
+                <span class="fa fa-user"></span>
+                <input type="text" name="first_name" id="first_name" placeholder="Firstname">
+            </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="fa fa-user"></span>
+                     <input type="text" name="last_name" id="last_name" placeholder="Lastname">
+                </div>
+      <div class="form-field d-flex align-items-center">
+                <span class="fa fa-key"></span>
+                <input type="email" name="email" id="email" placeholder="Email ID">
+            </div>
+      <div class="form-field d-flex align-items-center">
+                <span class="fa fa-key"></span>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+      <div class="form-field d-flex align-items-center">
+                <span class="fa fa-key"></span>
+                <input type="password" name="password1" id="password1" placeholder="Confirm yourPassword">
+            </div>
+    <button class="btn mt-3">Register</button>
+        <div class="text-center fs-6"></div>
+    </form>
+ </div>
+</div>
+</div>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>

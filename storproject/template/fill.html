@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <head>
+	  <meta charset="UTF-8">
+	  <title>Login & Register</title>
+<style>
+.container1{
+text-align: center;
+position: fixed;
+top: 40%;
+left: 40%;
+}
+#btn{
+font-size: 25px;
+}
+</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<body>
+<div class="container">
+{% include 'header.html' %}
+{% block content %}{% endblock %}
+        </div>
+ <nav>
+   <ul>
+      <li><button class="button" id="btn"><a href="form" >Please fill up the form </a></button></li>
+      <li><button type="submit"><a href="logout">Logout</a></button></li>
+      </nav>
+   </ul>
+  </div>
+</body>
+</html>

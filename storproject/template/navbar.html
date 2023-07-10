@@ -1,0 +1,24 @@
+      <nav>
+        <ul>
+            <li class="active"><a href="home">Home </a></li>
+            <li><a href="about">About Us </a></li>
+            <li><a href="faculty">Faculty </a></li>
+            <li><a href="#">Courses </a>
+                <ul>
+                    <li><a href="http://en.wikipedia.org/wiki/Commerce" target="_blank">Commerce</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Computer_science" target="_blank">Computer Science</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Humanities" target="_blank">Humanities</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Biology" target="_blank">BioScience</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Mathematical_and_theoretical_biology" target="_blank">BioMathematics</a></li>
+                </ul>
+            </li>
+            <li><a href="contact">Contact Us</a></li>
+                     {% if user.is_authenticated %}
+                     <li><a href="logout">Logout</a></li>
+                     <li> Thankyou! Your application is successfully submitted. Please Logout{{user.username}}</li>
+                    {% else %}
+                     <button type="button" class="btnLogin-popup"><a href="login">Login</a></button>
+                     <button type="button" class="btnLogin-popup"><a href="register">Register</a></button>
+                    {% endif %}
+        </ul>
+    </nav>

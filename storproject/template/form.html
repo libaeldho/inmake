@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <title>Application Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <script>
+var courseObject = {
+  "Commerce": {
+    "BBA": ["Three","Five"],
+    "BCOM": ["Three","Five"],
+    "CA": ["Four","Six"]
+     },
+  "BioScience": {
+   "BSC": ["Three","Five"],
+   "BA": ["Three","Five"],
+   "BBA": ["Three","Five"],
+   "BTECH": ["Five","Seven"],
+   "BCOM": ["Three","Five"],
+   "BFT": ["Three","Five"],
+   "BTT": ["Three","Five"],
+   "MBBS": ["Five","Seven"],
+   "NURSING": ["Four","Six"]
+  },
+  "BioMathematics": {
+   "BSC": ["Three","Five"],
+   "BA": ["Three","Five"],
+   "BBA": ["Three","Five"],
+   "BTECH": ["Five","Seven"] ,
+   "BCOM": ["Three","Five"],
+   "BFT": ["Three","Five"],
+   "BTT": ["Three","Five"]
+   },
+  "Computer Science": {
+   "BSC": ["Three","Five"],
+   "BA": ["Three","Five"],
+   "BBA": ["Three","Five"],
+   "BCA": ["Three","Five"],
+   "BCOM": ["Three","Five"],
+   "BFT": ["Three","Five"],
+   "BTT": ["Three","Five"]
+   },
+  "Humanities": {
+   "BSC": ["Three","Five"],
+   "BA": ["Three","Five"],
+   "BFT": ["Three","Five"],
+   "BTT": ["Three","Five"],
+   "LLB": ["Three","Five"]
+  }
+}
+window.onload = function() {
+  var courseSel = document.getElementById("course");
+  var degreeSel = document.getElementById("degree");
+  var yearSel = document.getElementById("year");
+  for (var x in courseObject) {
+    courseSel.options[courseSel.options.length] = new Option(x, x);
+  }
+  courseSel.onchange = function() {
+      //empty Year- and Degree- dropdowns
+    yearSel.length = 1;
+    degreeSel.length = 1;
+        //display correct values
+      for (var y in courseObject[this.value]) {
+      degreeSel.options[degreeSel.options.length] = new Option(y, y);
+    }
+  }
+  degreeSel.onchange = function() {
+      //empty Year dropdown
+    yearSel.length = 1;
+        //display correct values
+    var z = courseObject[courseSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      yearSel.options[yearSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+    </script>
+  </head>
+  <body>
+    <div class="testbox">
+     <form action="login" method="post">
+      {% csrf_token %}
+      <div class="banner">
+        <h1> Application Form</h1>
+      </div>
+      <div class="item">
+        <p> Please read carefully and submit<p>
+      <h5>1.Personnel Details :</h5>
+      </div>
+      <div class="item">
+        <p>a).Name <span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+      <div class="item">
+        <p>b).Date Of Birth</p>
+        <input type="date" name="bdate" required/>
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="item">
+        <p>c).Age</p>
+      <div class="item">
+        <input type="text" name="name" />
+      </div>
+      </div>
+        <div class="question">
+        <p>d).Gender:<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_1" name="investigator" required/>
+          <label for="radio_1" class="radio"><span>Female</span></label>
+          <input type="radio" value="none" id="radio_2" name="investigator" required/>
+          <label for="radio_2" class="radio"><span>Male</span></label>
+        </div>
+        </div>
+      <div class="item">
+        <p>e).Phone<span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+      <div class="item">
+        <p>f).Email<span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+       <div class="item">
+          <p>g).Mailing Address<span class="required">*</span></p>
+        <input type="text" name="name" placeholder="Street address" required/>
+        <input type="text" name="name" placeholder="Street address line 2" required/>
+       </div>
+        <div class="city-item">
+          <input type="text" name="name" placeholder="City" required/>
+          <input type="text" name="name" placeholder="State" required/>
+          <input type="text" name="name" placeholder="Postalcode" required/>
+        </div>
+      <div class="item">
+        <p>h)Course List<span class="required">*</span></p>
+           <select name="course" id="course">
+            <option value="" selected="selected">Select Course</option>
+  </select>
+  <br><br>
+         <select name="degree" id="degree">
+        <option value="" selected="selected">Please select Degree</option>
+        </select>
+  <br><br>
+    <select name="year" id="year">
+        <option value="" selected="selected">No of Year Need to Complete</option>
+    </select>
+    <br><br>
+      </div>
+       <div class="question">
+        <p>i).Why you need to join here<span class="required">*</span></p>
+          <select required>
+            <option value="1">Provide best Course,Faculty and Facilities</option>
+            <option value="2">Need to go Abroad</option>
+            <option value="3">Need to get Placement</option>
+            <option value="4">Near by Hometown</option>
+            <option value="5">Friends are joining for there higher studies</option>
+            <option value="5">Forced by Parent's</option>
+          </select>
+       </div>
+        <div class="question-answer checkbox-item">
+          <p>j).You need to bring at time of admission<span class="required">*</span></p>
+          </div>
+         <div>
+            <input type="checkbox" value="none" id="check_1" name="checklist" required/>
+            <label for="check_1" class="check"><span>Copy of ApplicationForm</span></label>
+             </div>
+          <div>
+            <input type="checkbox" value="none" id="check_2" name="checklist" required/>
+            <label for="check_2" class="check"><span>4passport Size Photo</span></label>
+          </div>
+          <div>
+            <input type="checkbox" value="none" id="check_3" name="checklist" required/>
+            <label for="check_3" class="check"><span>Attested copy of Mark List-5set</span></label>
+          </div>
+          <div>
+            <input type="checkbox" value="none" id="check_4" name="checklist" required/>
+            <label for="check_4" class="check"><span>Transfer Certificate and Contact Certificate</span></label>
+          </div>
+          <div>
+            <input type="checkbox" value="none" id="check_5" name="checklist" required/>
+            <label for="check_5" class="check"><span>Bring your Parent or Local Guardian</span></label>
+          </div>
+        <br />
+        <div class="question">
+          <p>I agree to the above conditions If I am selected:<span class="required">*</span></p>
+          <div class="question-answer checkbox-item">
+              <input type="checkbox" value="none" id="check_9" name="check" required/>
+              <label for="check_9" class="check"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">terms of service.</a></span></label>
+          </div>
+        </div>
+        <div class="btn-block">
+            <button type="submit"><a href="home">Submit</a></button>
+        </div>
+     </form>
+    </div>
+  </body>
+</html>

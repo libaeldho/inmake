@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="{% static 'faculty.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><link rel="stylesheet" href="{% static 'style.css' %}">
+       <meta name="description" content="{% block metadescription %}{% endblock %}">
+        <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="container">
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+{% block content %}{% endblock %}
+        </div>
+<section class="dark">
+	<div class="container py-4">
+		<h1 class="h1 text-center" id="pageHeaderTitle">OUR FACULTY</h1>
+
+		<article class="postcard dark blue">
+			<img class="postcard__img" src="static/coms.jpg" alt="Image Title" />
+			<div class="postcard__text">
+				<h1 class="postcard__title white"><a href="#">COMMERCE</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+			</div>
+		</article>
+	<article class="postcard dark blue">
+			<img class="postcard__img" src="static/css.jpg" alt="Image Title" />
+			<div class="postcard__text">
+				<h1 class="postcard__title white"><a href="#">COMPUTER SCIENCE</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+			</div>
+		</article>
+		<article class="postcard dark blue">
+			<img class="postcard__img" src="static/biom.jpg" alt="Image Title" />
+			<div class="postcard__text">
+				<h1 class="postcard__title white"><a href="#">BIO-MATHEMATICS</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+			</div>
+		</article>
+		<article class="postcard dark blue">
+			<img class="postcard__img" src="static/hum.jpg" alt="Image Title" />
+			<div class="postcard__text">
+				<h1 class="postcard__title white"><a href="#">HUMANITIES</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+			</div>
+		</article>
+		<article class="postcard dark blue">
+			<img class="postcard__img" src="static/scc.jpg" alt="Image Title" />
+			<div class="postcard__text">
+				<h1 class="postcard__title white"><a href="#">BIO-SCIENCE</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+			</div>
+		</article>
+		</div>
+</section>
+
+{% include 'footer.html' %}
+</body>
+<body>
