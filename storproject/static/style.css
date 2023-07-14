@@ -32,22 +32,6 @@ nav ul li a{
 nav ul li a:hover{
     background-color:  #ffb3ff;
 }
- button{
-  float:right;
-  background-color: green;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
 nav ul li ul{
     position: absolute;
     display: none;
@@ -67,7 +51,7 @@ nav ul li ul li a{
     padding: 10px 16px;
 }
 nav ul li ul li a:hover{
-background-color:  #ffb3ff;
+background-color:  white;
 }
 .footer {
    position: fixed;
@@ -137,44 +121,6 @@ margin:10px 0 40px;
 font-size:20px;
 color:maroon;
 }
-.hero-btn{
-display:inline-block;
-text-decoration:none;
-color:maroon;
-border:1px solid maroon;
-padding:12px 34px;
-font-size:13px;
-background:aqua green;
-position:relative;
-cursor:pointer;
-}
-.hero-btn:hover{
-border:1px;
-background:blue;transition:1s
-}
-
-.register-link{
-    font-size:12px;
-    text-align:center;
-    margin-topL:15px;
-}
-.btn-block .button {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background: grey;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background: #666;
-      }
  .styled {
     border: 0;
     line-height: 2.5;
@@ -190,5 +136,33 @@ background:blue;transition:1s
 }
 
 .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgba(255, 0, 255, 1);
 }
+.btnLogin-popup {
+  background-color: green;
+  border: white;
+  color: white;
+  padding: 10px;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  }
+  .button{
+  background-color: green;
+  border: white;
+  color: white;
+  padding: 10px;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  }

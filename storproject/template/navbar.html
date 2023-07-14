@@ -15,7 +15,7 @@
             <li><a href="contact">Contact Us</a></li>
                      {% if user.is_authenticated %}
                      <li><a href="logout">Logout</a></li>
-                     <li> Thankyou! Your application is successfully submitted. Please Logout{{user.username}}</li>
+                     <li> Thankyou! Please {{user.username}} & Continue</li>
                     {% else %}
                      <button type="button" class="btnLogin-popup"><a href="login">Login</a></button>
                      <button type="button" class="btnLogin-popup"><a href="register">Register</a></button>

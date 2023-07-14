@@ -4,11 +4,10 @@
   <head>
     <title>Application Form</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <script>
+      <script>
 var courseObject = {
   "Commerce": {
     "BBA": ["Three","Five"],
@@ -185,13 +184,13 @@ window.onload = function() {
         <br />
         <div class="question">
           <p>I agree to the above conditions If I am selected:<span class="required">*</span></p>
-          <div class="question-answer checkbox-item">
+            <label for="check_9" class="check"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">terms of service.</a></span></label>
+            <div class="question-answer checkbox-item">
               <input type="checkbox" value="none" id="check_9" name="check" required/>
-              <label for="check_9" class="check"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">terms of service.</a></span></label>
           </div>
         </div>
         <div class="btn-block">
-            <button type="submit"><a href="home">Submit</a></button>
+            <button type="submit"><a href="success">Submit</a></button>
         </div>
      </form>
     </div>

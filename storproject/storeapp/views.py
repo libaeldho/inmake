@@ -1,6 +1,7 @@
-from django.contrib import auth, messages
+from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from .models import Application
 
 
 def base(request):
@@ -21,6 +22,14 @@ def faculty(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+def fill(request):
+    return render(request, 'fill.html')
+
+
+def success(request):
+    return render(request, 'success.html')
 
 
 def login(request):
@@ -73,9 +82,44 @@ def logout(request):
 
 
 def form(request):
+    if request.method == 'POST':
+        # Process the form data here
+        name = request.POST.get('name')
+        date_of_birth = request.POST.get('bdate')
+        age = request.POST.get('age')
+        gender = request.POST.get('gender')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        mailing_address = request.POST.get('mailing_address')
+        city = request.POST.get('city')
+        state = request.POST.get('state')
+        postal_code = request.POST.get('postal_code')
+        course = request.POST.get('course')
+        degree = request.POST.get('degree')
+        year = request.POST.get('year')
+        reason_to_join = request.POST.get('reason_to_join')
+        checklist = request.POST.getlist('checklist')
+        agree_terms = request.POST.get('agree_terms') == 'on'
+
+        application = Application(
+            name=name,
+            date_of_birth=date_of_birth,
+            age=age,
+            gender=gender,
+            phone=phone,
+            email=email,
+            mailing_address=mailing_address,
+            city=city,
+            state=state,
+            postal_code=postal_code,
+            course=course,
+            degree=degree,
+            year=year,
+            reason_to_join=reason_to_join,
+            checklist=','.join(checklist),
+            agree_terms=agree_terms
+        )
+        application.save()
+
+        return redirect('success')
     return render(request, "form.html")
-
-
-def fill(request):
-    return render(request, "fill.html")
-

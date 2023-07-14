@@ -1,47 +1,23 @@
 from django.db import models
 
 
-class Department(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
-class Course(models.Model):
-    name = models.CharField(max_length=50)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
-class Purpose(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
-class Material(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
-class FormSubmission(models.Model):
+class Application(models.Model):
     name = models.CharField(max_length=100)
-    dob = models.DateField()
+    date_of_birth = models.DateField()
     age = models.IntegerField()
     gender = models.CharField(max_length=10)
-    phone_number = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20)
     email = models.EmailField()
-    address = models.TextField()
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    purpose = models.ForeignKey(Purpose, on_delete=models.CASCADE)
-    materials = models.ManyToManyField(Material)
+    mailing_address = models.CharField(max_length=200)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    postal_code = models.CharField(max_length=10)
+    course = models.CharField(max_length=100)
+    degree = models.CharField(max_length=100)
+    year = models.CharField(max_length=100)
+    reason_to_join = models.CharField(max_length=200)
+    checklist = models.CharField(max_length=200)
+    agree_terms = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

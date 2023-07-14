@@ -1,0 +1,39 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <head>
+	  <meta charset="UTF-8">
+	  <title>Login & Register</title>
+      <style>
+.container1{
+text-align: center;
+position: fixed;
+top: 40%;
+left: 40%;
+}
+#btn{
+font-size: 25px;
+}
+</style>
+
+      <link rel="stylesheet" type="text/css" href="{% static 'back.css' %}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<body>
+
+<div class="container">
+{% include 'header.html' %}
+    {% block content %}{% endblock %}
+        </div>
+ <div class="Success">
+        <h1>Your application is successfully submitted !</h1>
+        <p>Please continue....</p>
+ </div>
+     <nav>
+         <ul>
+          <button type="submit"><a href="home">Go to Home Page</a></button>
+         </ul>
+     </nav>
+</body>
+</html>

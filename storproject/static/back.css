@@ -1,0 +1,48 @@
+body{
+    background-image: url("back.jpg");
+    background-size: cover;
+    }
+nav{
+     background-color: #3567fd;
+    height: 75px;
+    line-height: 75px;
+    padding:0px 100px;
+}
+
+nav ul{
+    float:center;
+}
+nav ul li{
+    float: left;
+    list-style:none;
+    position:relative;
+}
+nav ul li a{
+    text-decoration: none;
+    font-family: san-serif;
+    color: white;
+    font-size: 17px;
+    padding: 0px 16px;
+    display: block;
+}
+nav ul li a:hover{
+    background-color:  #ffb3ff;
+}
+nav ul li ul{
+    position: absolute;
+    display: none;
+    background-color: #3567fd;;
+    border-radius: 0px 0px 5px 5px;
+}
+.button {
+ padding: 12px 40px;
+ float: right;
+ border-radius: 8px;
+ box-shadow: 2px 2px 2px 1px rgb(131, 131, 219) ;
+ border: 1px solid green;
+ font-size: 20px;
+ }
+button:hover{
+ background-color: cadetblue;
+ color: rgb(246, 244, 248);
+}

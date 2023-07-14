@@ -11,6 +11,7 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
     path('form', views.form, name='form'),
+    path('success', views.success, name='success'),
     path('fill', views.fill, name='fill'),
 
 ]
